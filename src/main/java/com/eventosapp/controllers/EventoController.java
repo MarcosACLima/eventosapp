@@ -47,6 +47,10 @@ public class EventoController {
 		Evento evento = er.findByCodigo(codigo); // buscar evento com tal codigo e guardar na variavel evento
 		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
 		mv.addObject("evento", evento);
+		
+		Iterable<Convidado> convidados = cr.findByEvento(evento); // buscar lista de convidados de tal evento
+		mv.addObject("convidados", convidados); // add objeto a view
+		
 		return mv;
 	}
 	
