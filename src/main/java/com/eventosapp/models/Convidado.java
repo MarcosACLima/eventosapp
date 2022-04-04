@@ -1,5 +1,6 @@
 package com.eventosapp.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -8,8 +9,10 @@ import javax.persistence.ManyToOne;
 public class Convidado {
 	
 	@Id
+	@Column(length = 12)
 	private String rg;
 	
+	@Column(length = 60)
 	private String nomeConvidado;
 	
 	@ManyToOne // Muitos Convidados para 1 evento
