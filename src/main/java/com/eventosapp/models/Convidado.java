@@ -5,13 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import javax.validation.constraints.NotEmpty;
+
 @Entity
 public class Convidado {
 	
 	@Id
+	@NotEmpty
 	@Column(length = 12)
 	private String rg;
 	
+	@NotEmpty
 	@Column(length = 60)
 	private String nomeConvidado;
 	
